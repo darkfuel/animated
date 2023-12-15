@@ -15,10 +15,12 @@
 
 body{
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    color: rgb(255, 255, 255);
     grid-template-areas: 
     "nav"
-    "productos"
+    "aside"
+    "section"
     "pie"
 
     ;
@@ -27,6 +29,9 @@ body{
 .main{
     grid-area: nav;
     justify-content: space-around;
+    background-color:#c655c8;
+    border-radius: 5%;
+    margin:5px;
     
 
 }
@@ -39,19 +44,105 @@ body{
 
 .contenedor-izq{
     gap: 20px;
-    color: aqua;
+    
+}
+
+.barra{
+   
+    display: none;
+   
 }
 
 section{
     grid-area: productos;
     display: grid;
     grid-template-columns: 1fr;
+    grid-area: section;
     grid-template-areas: "productos";
+    gap: 15px;
+    justify-items: center;
+    margin: 5px;
+    border-radius: 3%;
+    background-color: #fa26d5;
+    opacity: 0.8;
+    background-image:  repeating-linear-gradient(45deg, #f68ef7 25%, transparent 25%, transparent 75%, #f68ef7 75%, #f68ef7), repeating-linear-gradient(45deg, #f68ef7 25%, #fa26d5 25%, #fa26d5 75%, #f68ef7 75%, #f68ef7);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+}
 
+.producto{
+    flex-direction: column;
+    background-color: #f68ef7;
+    padding: 20px;
+    border-radius: 10%;
+    border: solid rgb(250, 82, 82);
+    margin: 10px;
+}
+
+section img{
+    width: 100px;
+    height: 100px;
+}
+
+section img:hover{
+    
 }
 
 footer{
+    background-color: #c655c8;
     grid-area: pie;
     gap: 10px;
     
+}
+
+@media screen and (min-width: 768px) {
+
+    .contenedor-der{
+        display: none;
+    }
+
+    .barra{
+        display: flex;
+        background-color: rgb(255, 176, 250);
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-style: dotted;
+        border-color:  rgb(248, 92, 92);
+        border-radius: 2%;
+        margin:5px;
+    }
+
+    h2:hover{
+        color: rgb(248, 92, 92);
+        ;
+    }
+
+    h3:hover{
+        color: rgb(248, 92, 92);
+        ;
+    }
+
+    h5:hover{
+        color: rgb(248, 92, 92);
+        ;
+    }
+    
+
+    body{
+        grid-template-columns:200px 1fr;
+        grid-template-areas: 
+        "nav nav"
+        "aside section"
+        "pie pie"
+
+
+    }
+    section{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "productos productos"
+        ;
+    }
+
+
 }
