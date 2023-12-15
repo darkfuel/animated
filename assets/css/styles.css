@@ -1,0 +1,57 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;    
+}
+
+.flex{
+    display: flex;
+}
+
+.center{
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "nav"
+    "productos"
+    "pie"
+
+    ;
+}
+
+.main{
+    grid-area: nav;
+    justify-content: space-around;
+    
+
+}
+
+.main img{
+    width: 60px;
+    height: 60px;
+    
+}
+
+.contenedor-izq{
+    gap: 20px;
+    color: aqua;
+}
+
+section{
+    grid-area: productos;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "productos";
+
+}
+
+footer{
+    grid-area: pie;
+    gap: 10px;
+    
+}
