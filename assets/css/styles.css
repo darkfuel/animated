@@ -82,10 +82,11 @@ section{
 section img{
     width: 100px;
     height: 100px;
+    transition: transform .9s ease;
 }
 
 section img:hover{
-    
+    transform: scale(1.5); 
 }
 
 footer{
@@ -142,6 +143,8 @@ footer{
         grid-template-areas:
         "productos productos"
         ;
+        overflow-y: scroll;
+        max-height: 82vh;
     }
 
 
